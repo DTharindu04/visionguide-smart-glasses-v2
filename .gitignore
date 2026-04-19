@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.onnx
+*.tflite
+*.caffemodel
+*.h5
+*.pt
+*.pth
+.env
+.vscode/
