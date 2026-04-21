@@ -1,0 +1,5 @@
+# ONNX Runtime is the primary backend for the safety object detector because
+# Raspberry Pi OS Bookworm's OpenCV DNN build can reject modern YOLO ONNX
+# graphs. Keep wheels in the offline setup cache before field deployment.
+
+onnxruntime>=1.17.0,<2.0.0

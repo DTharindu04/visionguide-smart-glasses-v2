@@ -1,0 +1,9 @@
+# Development-only dependencies for non-Pi workstations and CI.
+
+-r base.txt
+
+opencv-python-headless>=4.9.0,<5.0.0
+onnxruntime>=1.17.0,<2.0.0
+pytest>=8.2.0,<9.0.0
+ruff>=0.5.0,<1.0.0
+

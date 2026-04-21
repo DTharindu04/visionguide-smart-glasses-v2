@@ -1,0 +1,48 @@
+[models.object_detection]
+version = "v8n"
+license = "AGPL-3.0"
+sha256 = "dd48a79dd7fec8ca25fde4eca742ff7bca23b27e2e903eb23bc1d9f83a459bd2"
+input_schema = "RGB image tensor resized according to model metadata."
+output_schema = "Detection boxes, class IDs, and confidence scores."
+
+[models.object_labels]
+version = "coco80"
+license = "dataset labels"
+sha256 = "bd17f1ee35d5f3c862a4894605855abbb9dda4b0621fdb0ac4c2c8c7bb7e730a"
+input_schema = "UTF-8 text labels, one class per line."
+output_schema = "Navigation class names used by object_detection."
+
+[models.face_detection]
+version = "2023mar"
+license = "Apache-2.0"
+sha256 = "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4"
+input_schema = "RGB face detector input tensor resized according to model metadata."
+output_schema = "Face boxes, landmarks when available, and confidence scores."
+
+[models.face_recognition]
+version = "2021dec"
+license = "Apache-2.0"
+sha256 = "0ba9fbfa01b5270c96627c4ef784da859931e02f04419c829e83484087c34e79"
+input_schema = "Aligned face crop tensor."
+output_schema = "L2-normalized face embedding."
+
+[models.emotion_detection]
+version = "ferplus-8"
+license = "Apache-2.0"
+sha256 = "a2a2ba6a335a3b29c21acb6272f962bd3d47f84952aaffa03b60986e04efa61c"
+input_schema = "Aligned face crop tensor."
+output_schema = "Emotion class scores."
+
+[models.ocr_eng]
+version = "tessdata"
+license = "Apache-2.0"
+sha256 = "daa0c97d651c19fba3b25e81317cd697e9908c8208090c94c3905381c23fc047"
+input_schema = "Preprocessed high-contrast text image."
+output_schema = "Recognized English text with confidence values."
+
+[models.ocr_sin]
+version = "tessdata"
+license = "Apache-2.0"
+sha256 = "c4241607afe257b9cfdafa5a171287b7d0441ff541e3b214c0fa03558916ed24"
+input_schema = "Preprocessed high-contrast text image."
+output_schema = "Recognized Sinhala text with confidence values."

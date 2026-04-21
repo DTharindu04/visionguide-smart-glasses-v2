@@ -1,0 +1,11 @@
+# Raspberry Pi OS Bookworm runtime dependencies installed into a venv.
+# Create the venv with --system-site-packages so apt-provided cv2/picamera2
+# modules remain importable:
+#   python3 -m venv --system-site-packages .venv
+
+-r base.txt
+-r onnx.txt
+
+tflite-runtime==2.14.0
+gpiozero>=2.0.1,<3.0.0
+lgpio>=0.2.2.0,<1.0.0

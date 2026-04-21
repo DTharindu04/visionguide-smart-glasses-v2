@@ -8,5 +8,15 @@ __pycache__/
 *.h5
 *.pt
 *.pth
+*.traineddata
 .env
 .vscode/
+models/manifest.local.toml
+storage/faces/*
+!storage/faces/.gitkeep
+storage/cache/*
+!storage/cache/.gitkeep
+storage/logs/*
+!storage/logs/.gitkeep
+storage/settings/*
+!storage/settings/.gitkeep

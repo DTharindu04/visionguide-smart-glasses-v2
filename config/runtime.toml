@@ -1,0 +1,113 @@
+[runtime]
+environment = "production"
+profile = "pi4_balanced"
+language = "en"
+timezone = "Asia/Colombo"
+
+[paths]
+model_dir = "models"
+storage_dir = "storage"
+face_store_dir = "storage/faces"
+cache_dir = "storage/cache"
+log_dir = "storage/logs"
+settings_dir = "storage/settings"
+
+[camera]
+capture_width = 1280
+capture_height = 720
+inference_width = 640
+inference_height = 360
+target_fps = 24
+max_frame_age_ms = 160
+drop_stale_frames = true
+hflip = false
+vflip = false
+
+[audio]
+backend = "espeak-ng"
+voice = "en-us"
+speech_rate_wpm = 165
+volume = 0.95
+p1_interrupts_all = true
+p2_replaces_p3_p4 = true
+lowest_priority_in_quiet = "P1_DANGER"
+
+[diagnostics]
+enabled = true
+metrics_interval_seconds = 5.0
+slow_frame_ms = 220
+slow_inference_ms = 180
+log_rotation_mb = 10
+retained_log_files = 7
+
+[thresholds.objects]
+navigation_classes = [
+  "person",
+  "bicycle",
+  "motorcycle",
+  "car",
+  "bus",
+  "truck",
+  "chair",
+  "table",
+  "dog",
+  "cat",
+  "traffic light",
+  "stop sign",
+]
+mobile_hazard_classes = ["bicycle", "motorcycle", "car", "bus", "truck"]
+min_detection_confidence = 0.45
+min_danger_confidence = 0.55
+center_zone_x_min = 0.34
+center_zone_x_max = 0.66
+warning_bbox_area_ratio = 0.10
+close_bbox_area_ratio = 0.18
+critical_bbox_area_ratio = 0.28
+mobile_hazard_close_area_ratio = 0.14
+person_close_area_ratio = 0.20
+severity_warning_threshold = 0.45
+severity_danger_threshold = 0.70
+severity_critical_threshold = 0.88
+max_objects_per_frame = 8
+
+[thresholds.faces]
+min_face_width_px = 80
+min_face_height_px = 80
+min_laplacian_blur_variance = 80.0
+min_brightness = 45.0
+max_brightness = 215.0
+stable_frames_required = 3
+max_face_yaw_degrees = 28.0
+recognition_similarity_threshold = 0.62
+recognition_unknown_margin = 0.05
+recognition_min_confidence = 0.60
+emotion_min_confidence = 0.55
+enrollment_samples_required = 8
+enrollment_max_samples = 20
+
+[thresholds.ocr]
+min_trigger_interval_seconds = 4.0
+min_text_confidence = 55.0
+min_text_characters = 3
+repeat_similarity_threshold = 0.88
+cache_ttl_seconds = 120.0
+max_cache_entries = 20
+preprocessing_target_width_px = 960
+adaptive_threshold_block_size = 31
+adaptive_threshold_c = 11
+
+[cooldowns]
+danger_repeat_seconds = 1.2
+danger_clear_seconds = 2.5
+known_face_repeat_seconds = 45.0
+unknown_face_repeat_seconds = 25.0
+emotion_repeat_seconds = 60.0
+ocr_repeat_seconds = 30.0
+object_guidance_repeat_seconds = 8.0
+low_priority_context_repeat_seconds = 20.0
+system_status_repeat_seconds = 30.0
+same_message_dedup_seconds = 10.0
+stale_p1_ttl_seconds = 2.0
+stale_p2_ttl_seconds = 6.0
+stale_p3_ttl_seconds = 5.0
+stale_p4_ttl_seconds = 4.0
